@@ -6,9 +6,9 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "htetko",
   "license": "ISC",
-  "description": "",
+  "description": "An npm package for generating dynamic, fake JSON data for front-end developers using @faker-js/faker.",
   "devDependencies": {
     "jest": "^29.7.0"
   },
