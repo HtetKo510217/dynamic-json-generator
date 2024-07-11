@@ -3,7 +3,7 @@ const { generateJson, generateMultipleJson } = require('../index');
 test('generateJson returns correct format', () => {
     const template = {
         id: 'uuid',
-        name: 'name',
+        name: 'person',
         username: 'username',
         email: 'email',
         address: {
@@ -47,7 +47,7 @@ test('generateJson returns correct format', () => {
 test('generateMultipleJson returns correct number of items', () => {
     const template = {
         id: 'uuid',
-        name: 'name',
+        name: 'person',
         username: 'username',
         email: 'email'
     };

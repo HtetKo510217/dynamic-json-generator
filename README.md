@@ -21,7 +21,7 @@ const { generateJson, generateMultipleJson } = require('dynamic-json-generator')
 
 // Define a template
 
-const template = {
+const useTemplate = {
     id: 'uuid',
     name: 'name',
     username: 'username',
@@ -45,12 +45,19 @@ const template = {
     }
 };
 
+const postTemplate = {
+    id: 'uuid',
+    title: 'title',
+    body: 'body',
+    userId: 'uuid'
+};
+
 // Generate a single JSON object
-const singleJson = generateJson(template);
+const singleJson = generateJson(useTemplate);
 console.log(singleJson);
 
 // Generate multiple JSON objects
-const multipleJson = generateMultipleJson(template, 20);
+const multipleJson = generateMultipleJson(useTemplate, 20);
 console.log(multipleJson);
 ```
 
