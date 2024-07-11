@@ -1,18 +1,35 @@
 {
   "name": "dynamic-json-generator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
-  "author": "htetko",
+  "keywords": [
+    "json",
+    "generator",
+    "faker",
+    "dynamic",
+    "fake data",
+    "testing",
+    "mock data",
+    "frontend"
+  ],
+  "author": "htetko510217",
   "license": "ISC",
-  "description": "An npm package for generating dynamic, fake JSON data for front-end developers using @faker-js/faker.",
+  "description": "A tool to generate dynamic fake JSON data for testing purposes using @faker-js/faker.",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1"
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   },
-  "dependencies": {
-    "@faker-js/faker": "^8.4.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/htetko510217/dynamic-json-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/htetko510217/dynamic-json-generator/issues"
+  },
+  "homepage": "https://github.com/htetko510217/dynamic-json-generator#readme"
 }
