@@ -17,7 +17,12 @@ Import the package in your project and use the generateJson and generateMultiple
 ## Example
 
 ```javascript
+
+// Import CommonJS (require)
 const { generateJson, generateMultipleJson } = require('dynamic-json-generator');
+
+// Import ES Modules (import)
+import { generateJson, generateMultipleJson } from 'dynamic-json-generator';
 
 // Define a template
 
