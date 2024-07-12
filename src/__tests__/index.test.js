@@ -1,5 +1,5 @@
-const { generateJson, generateMultipleJson } = require('../index');
-
+// const { generateJson, generateMultipleJson } = require('../index');
+import { generateJson, generateMultipleJson } from '../index';
 test('generateJson returns correct format', () => {
     const template = {
         id: 'uuid',
