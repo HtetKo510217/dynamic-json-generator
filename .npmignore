@@ -1,0 +1,5 @@
+node_modules
+src
+tests
+rollup.config.mjs
+*.log
