@@ -54,7 +54,8 @@ const postTemplate = {
     id: 'uuid',
     title: 'title',
     body: 'body',
-    userId: 'uuid'
+    userId: 'uuid',
+    image: 'imageUrl', // or 'image.url' like @faker-js/faker
 };
 
 // Generate a single JSON object
