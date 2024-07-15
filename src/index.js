@@ -1,23 +1,25 @@
 import { faker } from '@faker-js/faker';
 
+const { string, lorem, image, location, phone, internet, company } = faker;
+
 function generateValue(type, params = {}) {
     const specialCases = {
-        'uuid': () => faker.string.uuid(),
-        'title': () => faker.lorem.words(5),
-        'imageUrl': () => faker.image.url(),
-        'description': () => faker.lorem.paragraph(),
-        'address': () => faker.location.streetAddress(),
-        'street': () => faker.location.street(),
-        'suite': () => faker.location.secondaryAddress(),
-        'city': () => faker.location.city(),
-        'zipcode': () => faker.location.zipCode(),
-        'lat': () => faker.location.latitude(),
-        'lng': () => faker.location.longitude(),
-        'phone': () => faker.phone.number(),
-        'website': () => faker.internet.url(),
-        'companyName': () => faker.company.name(),
-        'body': () => faker.lorem.paragraph(),
-        'message': () => faker.lorem.paragraph(),
+        'uuid': () => string.uuid(),
+        'title': () => lorem.words(5),
+        'imageUrl': () => image.url(),
+        'description': () => lorem.paragraph(),
+        'address': () => location.streetAddress(),
+        'street': () => location.street(),
+        'suite': () => location.secondaryAddress(),
+        'city': () => location.city(),
+        'zipcode': () => location.zipCode(),
+        'lat': () => location.latitude(),
+        'lng': () => location.longitude(),
+        'phone': () => phone.number(),
+        'website': () => internet.url(),
+        'companyName': () => company.name(),
+        'body': () => lorem.paragraph(),
+        'message': () => lorem.paragraph(),
     };
 
     if (specialCases[type]) {
@@ -25,7 +27,7 @@ function generateValue(type, params = {}) {
     }
 
     const [module, method] = type.split('.');
-    
+
     if (faker[module] && typeof faker[module][method] === 'function') {
         try {
             return faker[module][method](params);
@@ -34,7 +36,7 @@ function generateValue(type, params = {}) {
             return null;
         }
     }
-    
+
     return faker.lorem.word();
 }
 
