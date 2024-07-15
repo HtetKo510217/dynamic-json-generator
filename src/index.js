@@ -40,7 +40,7 @@ function generateValue(type, params = {}) {
     return faker.lorem.word();
 }
 
-function generateJson(template) {
+export function generateJson(template) {
     const result = {};
 
     for (const key in template) {
@@ -55,7 +55,7 @@ function generateJson(template) {
     return result;
 }
 
-function generateMultipleJson(template, count) {
+export function generateMultipleJson(template, count) {
     const results = [];
     for (let i = 0; i < count; i++) {
         results.push(generateJson(template));
@@ -63,7 +63,3 @@ function generateMultipleJson(template, count) {
     return results;
 }
 
-module.exports = {
-    generateJson,
-    generateMultipleJson
-};
