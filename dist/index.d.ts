@@ -2,7 +2,9 @@ interface JsonTemplate {
     [key: string]: string | JsonTemplate;
 }
 
-declare function generateJson(template: JsonTemplate): Record<string, any>;
-declare function generateMultipleJson(template: JsonTemplate, count: number): Record<string, any>[];
+type Locale = 'en' | 'mm'
 
-export { type JsonTemplate, generateJson, generateMultipleJson };
+declare function generateJson(template: JsonTemplate, locale?: Locale): Record<string, any>;
+declare function generateMultipleJson(template: JsonTemplate, count: number, locale?: Locale): Record<string, any>[];
+
+export { type JsonTemplate, type Locale, generateJson, generateMultipleJson };

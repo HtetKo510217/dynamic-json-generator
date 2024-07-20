@@ -25,29 +25,13 @@ const { generateJson, generateMultipleJson } = require('dynamic-json-generator')
 import { generateJson, generateMultipleJson } from 'dynamic-json-generator';
 
 // Define a template
-
-const useTemplate = {
+const userTemplate = {
     id: 'uuid',
-    name: 'name',
-    username: 'username',
-    email: 'email',
+    name: 'fullName',
     address: {
         street: 'street',
-        suite: 'suite',
         city: 'city',
-        zipcode: 'zipcode',
-        geo: {
-            lat: 'lat',
-            lng: 'lng'
-        }
     },
-    phone: 'phone',
-    website: 'website',
-    company: {
-        name: 'companyName',
-        catchPhrase: 'catchPhrase',
-        bs: 'bs'
-    }
 };
 
 const postTemplate = {
@@ -58,57 +42,83 @@ const postTemplate = {
     image: 'imageUrl', // or 'image.url' like @faker-js/faker
 };
 
-// Generate a single JSON object
-const singleJson = generateJson(useTemplate);
-console.log(singleJson);
+// Generate a single JSON object (English locale)
+const singleJsonEn = generateJson(userTemplate);
+console.log(singleJsonEn);
 
-// Generate multiple JSON objects
-const multipleJson = generateMultipleJson(useTemplate, 20);
-console.log(multipleJson);
+// Generate multiple JSON objects (English locale)
+const multipleJsonEn = generateMultipleJson(userTemplate, 20);
+console.log(multipleJsonEn);
+
+// Generate a single JSON object (Burmese locale)
+const singleJsonMm = generateJson(userTemplate, 'mm');
+console.log(singleJsonMm);
+
+// Generate multiple JSON objects (Burmese locale)
+const multipleJsonMm = generateMultipleJson(userTemplate, 20, 'mm');
+console.log(multipleJsonMm);
+
 ```
 
 ## Functions
-generateJson(template)
-Generates a single JSON object based on the provided template.
 
-template: An object where keys are field names and values are Faker data types (e.g., 'uuid', 'name', 'email').
-Returns an object with generated fake data.
+# generateJson(template, locale)
 
-generateMultipleJson(template, count)
+ Generates a single JSON object based on the provided template.
+
+- template: An object where keys are field names and values are Faker data types (e.g., 'uuid', 'name', 'email').
+- locale (optional): The locale to use for generating data. Can be 'en' for English (default) or 'mm' for Burmese.
+- Returns an object with generated fake data.
+
+## generateMultipleJson(template, count, locale)
+
 Generates multiple JSON objects based on the provided template.
 
-template: An object where keys are field names and values are Faker data types (e.g., 'uuid', 'name', 'email').
-count: The number of JSON objects to generate.
-Returns an array of objects with generated fake data.
+- template: An object where keys are field names and values are Faker data types (e.g., 'uuid', 'name', 'email').
+- count: The number of JSON objects to generate.
+- locale (optional): The locale to use for generating data. Can be 'en' for English (default) or 'mm' for Burmese.
+- Returns an array of objects with generated fake data.
+
 
 ## Templates
 You can create nested templates to generate complex JSON structures. The following Faker data types are supported:
 
-uuid
-name
-username
-email
-title
-imageUrl
-description
-address
-street
-suite
-city
-zipcode
-lat
-lng
-phone
-website
-companyName
-catchPhrase
-bs
-body
-message
-...and more from @faker-js/faker
-License
-This project is licensed under the ISC License.
+## Common Types (Both English and Burmese)
 
+
+- uuid
+- title
+- imageUrl
+- description
+- body
+- message
+- fullName
+- street
+- city
+
+## Other Types directly from @faker-js/faker (English only)
+
+- person.jobTitle
+- date.past
+- lorem.sentence
+- image.url
+- image.avatar
+- other types from @faker-js/faker
+
+You can create other types as needed.
+
+## Localization
+
+The package supports two locales:
+
+- 'en': English (default)
+- 'mm': Burmese
+
+To generate data in Burmese, pass 'mm' as the locale parameter to generateJson or generateMultipleJson.
+
+## License
+
+This project is licensed under the ISC License.
 
 ## Contributing
 
