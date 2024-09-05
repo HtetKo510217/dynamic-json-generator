@@ -39,7 +39,7 @@ const postTemplate = {
     title: 'title',
     body: 'body',
     userId: 'uuid',
-    image: 'imageUrl', // or 'image.url' like @faker-js/faker
+    image: 'image',
 };
 
 // Generate a single JSON object (English locale)
@@ -88,7 +88,7 @@ You can create nested templates to generate complex JSON structures. The followi
 
 - uuid
 - title
-- imageUrl
+- image
 - description
 - body
 - message
@@ -123,6 +123,10 @@ This project is licensed under the ISC License.
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any bugs or improvements.
+
+## Demo App
+
+[Demo App](https://github.com/HtetKo510217/dynamic-json-demo-app)
 
 ## Author
 

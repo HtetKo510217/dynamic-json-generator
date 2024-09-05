@@ -14,7 +14,8 @@ function generateValue(type, params = {}, locale = 'en') {
   const specialCases = {
     'uuid': () => string.uuid(),
     'title': () => locale === 'mm' ? faker.helpers.arrayElement(mm_locale.lorem.titles) : lorem.sentence(),
-    'imageUrl': () => image.url(),
+    'image': () => image.url(),
+    'avatar': () => image.avatar(),
     'description': () => locale === 'mm'
     ? faker.helpers.arrayElements(mm_locale.lorem.paragraphs, faker.number.int({ min: 1, max: 3 })).join(' ')
     : lorem.paragraph(),
@@ -24,6 +25,8 @@ function generateValue(type, params = {}, locale = 'en') {
     'message': () => locale === 'mm'
     ? faker.helpers.arrayElements(mm_locale.lorem.paragraphs, faker.number.int({ min: 1, max: 3 })).join(' ')
     : lorem.paragraph(),
+    'firstName': () => locale === 'mm' ? faker.helpers.arrayElement(mm_locale.name.firstName) : person.firstName(),
+    'lastName': () => locale === 'mm' ? faker.helpers.arrayElement(mm_locale.name.lastName) : person.lastName(),
     'fullName': () => locale === 'mm' ? faker.helpers.arrayElement(mm_locale.name.firstName) +'' + faker.helpers.arrayElement(mm_locale.name.lastName) : person.fullName(),
     'street': () => locale === 'mm' && mm_locale.location.street 
     ? faker.helpers.arrayElement(mm_locale.location.street) 
@@ -31,6 +34,13 @@ function generateValue(type, params = {}, locale = 'en') {
     'city': () => locale === 'mm' && mm_locale.location.city
     ? faker.helpers.arrayElement(mm_locale.location.city)
     : location.city(),
+    'gender': () => person.sexType(),
+    'phone': () => string.numeric({ length: 10 }),
+    'date' : () =>faker.date.between({ from: '2000-01-01', to: Date.now() }).toISOString().split('T')[0],
+    'weekday': () => faker.date.weekday(),
+    'month': () => faker.date.month(),
+    'boolean' : () => faker.datatype.boolean(),
+    'number' : () => faker.number.int({ min: 1, max: 100 }),
   };
   
 
